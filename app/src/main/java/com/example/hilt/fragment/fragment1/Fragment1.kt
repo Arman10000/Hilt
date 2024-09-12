@@ -6,16 +6,11 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.hilt.R
-import com.example.hilt.fragment.fragment1.di.Person2
 import com.example.hilt.fragment.fragment2.Fragment2
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class Fragment1 : Fragment(R.layout.fragment_1) {
-
-    @Inject
-    lateinit var person2: Person2
 
     private val viewModel: Fragment1ViewModel by viewModels()
 
@@ -32,6 +27,6 @@ class Fragment1 : Fragment(R.layout.fragment_1) {
     }
 
     companion object {
-        fun newInstance() = Fragment1()
+        fun newInstance(): Fragment1 = Fragment1()
     }
 }

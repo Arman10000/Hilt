@@ -3,16 +3,15 @@ package com.example.hilt.fragment.fragment1.di
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.FragmentComponent
-import dagger.hilt.android.scopes.FragmentScoped
+import dagger.hilt.android.components.ViewModelComponent
 
 class Person2
 
 @Module
-@InstallIn(FragmentComponent::class)
+@InstallIn(ViewModelComponent::class)
 class Fragment1Module {
 
     @Provides
-    @FragmentScoped
-    fun person2() = Person2()
+    fun person2(): Person2 = Person2()
+
 }

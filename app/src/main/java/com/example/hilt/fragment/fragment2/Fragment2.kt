@@ -6,16 +6,10 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.hilt.R
-import com.example.hilt.fragment.fragment1.Fragment1ViewModel
-import com.example.hilt.fragment.fragment2.di.Person3
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class Fragment2 : Fragment(R.layout.fragment_2) {
-
-    @Inject
-    lateinit var person3: Person3
 
     private val viewModel: Fragment2ViewModel by viewModels()
 
@@ -25,7 +19,7 @@ class Fragment2 : Fragment(R.layout.fragment_2) {
     }
 
     companion object {
-        fun newInstance(data: Int) = Fragment2().apply {
+        fun newInstance(data: Int): Fragment2 = Fragment2().apply {
             arguments = bundleOf("key" to data)
         }
     }
